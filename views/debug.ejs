@@ -9,7 +9,7 @@
 <body>
     <input type="file" id="file" />
     <button onclick="submit()">call api</button>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
         function submit () {
             let formData = new FormData();
@@ -28,7 +28,7 @@
 
             formData.append('data', JSON.stringify(values));
             formData.append('files', document.getElementById('file').files[0]);
-
+            /*
             fetch('http://localhost:8080/api/send-attachment', {
                 method: 'POST',
                 body: formData,
@@ -37,6 +37,21 @@
                 Accept: 'multipart/form-data; boundary=???',
                 },
             });
+            */
+           $.ajax({
+                url: '<%= apiUrl %>send-attachment',
+                type: 'POST',
+                datatype: 'json',
+                processData: false,
+                contentType: false,
+                data: formData,
+                success: (response) => {
+                    console.log(response)
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+           })
         }
     </script>
 </body>

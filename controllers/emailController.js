@@ -10,7 +10,9 @@ const transporter = nodemailer.createTransport({
 })
 
 const debugView = (req, res, next) => {
-    res.render('layout')
+    res.render('layout', { 
+        apiUrl: config.apiUrl
+    })
 }
 
 const sendEmail = (req, res, next) => {
