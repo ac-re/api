@@ -8,6 +8,10 @@ const router = express.Router()
 
 router.get('/debug', debugView)
 
+router.get('/test', (req, res) => {
+    res.send('get success')
+})
+
 router.post('/sendemail', (req, res) => {
     res.send('POST request to sendEmail')
 })
