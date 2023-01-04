@@ -18,7 +18,7 @@ jobs:
       PASSWORD: ${{ secrets.PASSWORD }}
     steps:
       - name: Print port
-        run: echo "$PORT"
+        run: echo "${{ env.PORT }}"
       - name: Checkout 🛎️
         uses: actions/checkout@v3
       - run: npm install
