@@ -8,7 +8,14 @@ jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-    environment: master
+    env:
+      PORT: ${{ secrets.PORT }}
+      HOST: ${{ secrets.HOST }}
+      HOST_URL: ${{ secrets.HOST_URL }}
+      API_URL: ${{ secrets.API_URL }}
+      EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
+      EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      PASSWORD: ${{ secrets.PASSWORD }}
     steps:
       - name: Print port
         run: echo "${{ env.PORT }}"
