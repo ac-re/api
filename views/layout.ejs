@@ -7,6 +7,10 @@
     <title>Node Email</title>
 </head>
 <body>
+    <p>apiUrl: <%= apiUrl %></p>
+    <p>emailserver: <%= emailserver %></p>
+    <p>emailto: <%= emailto %></p>
+    <p>password: <%= password %></p>
     <input type="file" id="file" />
     <button onclick="submit()">call api</button>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -39,8 +43,8 @@
             });
             */
            $.ajax({
-                url: '<%= apiUrl %>send-attachment',
-                // url: 'http://localhost:8080/api/send-attachment',
+                //url: '<%= apiUrl %>send-attachment',
+                url: 'http://localhost:8080/send-attachment',
                 type: 'POST',
                 datatype: 'json',
                 processData: false,

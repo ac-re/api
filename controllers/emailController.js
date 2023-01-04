@@ -11,7 +11,10 @@ const transporter = nodemailer.createTransport({
 
 const debugView = (req, res, next) => {
     res.render('layout', { 
-        apiUrl: config.apiUrl
+        apiUrl: config.apiUrl,
+        emailserver: config.emailserver,
+        emailto: config.emailto,
+        password: config.password,
     })
 }
 
