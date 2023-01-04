@@ -12,7 +12,7 @@ router.post('/sendemail', (req, res) => {
     res.send('POST request to sendEmail')
 })
 
-router.post('/api/send-attachment', upload.array('files'), sendEmail)
+router.post('/send-attachment', upload.array('files'), sendEmail)
 
 module.exports = {
     routes: router
