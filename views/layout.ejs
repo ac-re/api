@@ -12,7 +12,11 @@
     <p>emailto: <%= emailto %></p>
     <p>password: <%= password %></p>
     <input type="file" id="file" />
-    <button onclick="submit()">call api</button>
+    <br/>
+    <br/>
+    <button onclick="submit()">call career-form api</button>
+    <hr/>
+    <button onclick="contactSubmit()">call contact-form api</button>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
         function submit () {
@@ -43,13 +47,39 @@
             });
             */
            $.ajax({
-                url: '<%= apiUrl %>send-attachment',
-                //url: 'http://localhost:8080/send-attachment',
+                url: '<%= apiUrl %>career-form',
+                // url: 'http://localhost:8080/career-form',
                 type: 'POST',
                 datatype: 'json',
                 processData: false,
                 contentType: false,
                 data: formData,
+                success: (response) => {
+                    console.log(response)
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+           })
+        }
+
+        function contactSubmit () {
+            const data = {
+                company: '1',
+                name: '2',
+                mobile: '3',
+                email: '4',
+                subject: '5',
+                message: '6',
+            }
+
+            $.ajax({
+                url: '<%= apiUrl %>contact-form',
+                // url: 'http://localhost:8080/contact-form',
+                type: 'POST',
+                datatype: 'json',
+                contentType: 'application/json;charset=utf-8',
+                data: JSON.stringify(data),
                 success: (response) => {
                     console.log(response)
                 },
