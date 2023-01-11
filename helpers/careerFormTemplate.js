@@ -445,7 +445,10 @@ const careerFormTemplate = (data) => {
                       <li style="margin: 0 0 10px 30px">Phone*: ${data.mobile};</li>
                       <li style="margin: 0 0 10px 30px">Email*: ${data.email}</li>
                       <li style="margin: 0 0 10px 30px">Type of role you’d like to apply: ${data.role}</li>
-                      <li style="margin: 0 0 10px 30px">CV* / Cover letter: upload as attachment</li>
+                      <li style="margin: 0 0 10px 30px">CV*: ${data.resumeInputType === 'file' ? 'upload as attachment' : `<a href="${data.resume}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
+                      >${data.resume}</a>`}</li>
+                      <li style="margin: 0 0 10px 30px">Cover letter: ${data.coverLetterInputType === 'file' ? 'upload as attachment' : `<a href="${data.resume}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
+                      >${data.coverLetter}</a>`}</li>
                     </ul>
                   </td>
                 </tr>
