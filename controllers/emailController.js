@@ -60,7 +60,7 @@ const careerForm = async (req, res, next) => {
     //res.send('call send Email api')
     try {
         const { data } = req.body
-        const files = req.files
+        const files = req.files ? req.files : null
         if (data) {
             const email = JSON.parse(data)
             
