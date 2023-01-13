@@ -440,10 +440,10 @@ style="
                 </p> -->
                 <!-- <p style="margin: 0 0 15px">context:</p> -->
                 <ul style="padding: 0; margin: 0; list-style-type: disc">
-                  <li style="margin: 0 0 10px 30px">Subject: ${data.subject}</li>
+                  ${!!data.subject ? `<li style="margin: 0 0 10px 30px">Subject: ${data.subject}</li>` : ''}
                   <li style="margin: 0 0 10px 30px">Name*: ${data.name}</li>
-                  <li style="margin: 0 0 10px 30px">Company: ${data.company}</li>
-                  <li style="margin: 0 0 10px 30px">Phone: ${data.mobile}</li>
+                  ${!!data.company ? `<li style="margin: 0 0 10px 30px">Company: ${data.company}</li>` : ''}
+                  ${!!data.mobile ? `<li style="margin: 0 0 10px 30px">Phone: ${data.mobile}</li>` : ''}
                   <li style="margin: 0 0 10px 30px">Email*: ${data.email}</li>
                   <li style="margin: 0 0 10px 30px">Message*: ${data.message}</li>
                 </ul>
