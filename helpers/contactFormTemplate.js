@@ -482,7 +482,7 @@ style="
                       text-align: left;
                     "
                   >
-                    You're receiving this message because ${data.name} send from <a
+                    You're receiving this message because ${data.name} sent from <a
                     href="${frontendDomain}/contact"
                     >AC Re contact form</a>.
                   </td>
