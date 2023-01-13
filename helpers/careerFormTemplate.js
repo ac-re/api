@@ -447,10 +447,10 @@ const careerFormTemplate = (data) => {
                       ${!!data.role ? `<li style="margin: 0 0 10px 30px">Type of role you’d like to apply: ${data.role}</li>` : ''}
                       ${!!data.resume ? `<li style="margin: 0 0 10px 30px">CV: ${data.resumeInputType === 'file' ? 'upload as attachment' : `<a href="${data.resume}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
                       >${data.resume}</a>`}</li>` : ''}
-                      ${!data.resume ? `<li style="margin: 0 0 10px 30px">CV: No attachment might be due to the oversize. please check the email: hr@ac-re.com.tw.</li>` : ''}
+                      ${!data.resume ? `<li style="margin: 0 0 10px 30px">CV: No attachment might due to the oversize. please check the email: hr@ac-re.com.tw.</li>` : ''}
                       ${!!data.coverLetter ? `<li style="margin: 0 0 10px 30px">Cover letter: ${data.coverLetterInputType === 'file' ? 'upload as attachment' : `<a href="${data.coverLetter}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
                       >${data.coverLetter}</a>`}</li>` : ''}
-                      ${!data.coverLetter ? `<li style="margin: 0 0 10px 30px">Cover letter: No attachment might be due to the oversize. please check the email: hr@ac-re.com.tw.</li>` : ''}
+                      ${!data.coverLetter ? `<li style="margin: 0 0 10px 30px">Cover letter: No attachment might due to the oversize. please check the email: hr@ac-re.com.tw.</li>` : ''}
                     </ul>
                   </td>
                 </tr>
