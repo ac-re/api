@@ -487,7 +487,7 @@ const careerFormTemplate = (data) => {
                             text-align: left;
                           "
                         >
-                          You're receiving this message because ${data.name} send from <a
+                          You're receiving this message because ${data.name} sent from <a
                           href="${frontendDomain}/career"
                           >AC Re career form</a>.
                         </td>
