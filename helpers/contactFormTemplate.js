@@ -484,7 +484,7 @@ style="
                   >
                     You're receiving this message because ${data.name} sent from <a
                     href="${frontendDomain}/contact"
-                    >AC Re contact form</a>.
+                    >Unity contact form</a>.
                   </td>
                 </tr>
                 <!-- Subscription Info : BEGIN -->
@@ -528,7 +528,7 @@ style="
                       text-align: left;
                     "
                   >
-                    <strong>AC Re</strong>.
+                    <strong>Unity</strong>.
                     <span class="unstyle-auto-detected-links"
                       >+886-2-2508-0488</span
                     >

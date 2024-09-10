@@ -1,9 +1,8 @@
-'use strict'
-const { frontendDomain } = require('./config')
+"use strict";
+const { frontendDomain } = require("./config");
 
 const careerFormTemplate = (data) => {
-    return (
-        `
+  return `
                 <!DOCTYPE html>
 <html
   lang="en"
@@ -358,7 +357,9 @@ const careerFormTemplate = (data) => {
           font-family: sans-serif;
         "
       >
-        ${data.title} ${data.name} apply for the position ${data.role}. Attached with CV/cover letter.
+        ${data.title} ${data.name} apply for the position ${
+    data.role
+  }. Attached with CV/cover letter.
       </div>
       <!-- Visually Hidden Preview Text : END -->
 
@@ -440,17 +441,51 @@ const careerFormTemplate = (data) => {
                     </p> -->
                     <!-- <p style="margin: 0 0 15px">context:</p> -->
                     <ul style="padding: 0; margin: 0; list-style-type: disc">
-                      <li style="margin: 0 0 10px 30px">Title*: ${data.title}</li>
+                      <li style="margin: 0 0 10px 30px">Title*: ${
+                        data.title
+                      }</li>
                       <li style="margin: 0 0 10px 30px">Name*: ${data.name}</li>
-                      <li style="margin: 0 0 10px 30px">Phone*: ${data.mobile};</li>
-                      <li style="margin: 0 0 10px 30px">Email*: ${data.email}</li>
-                      ${!!data.role ? `<li style="margin: 0 0 10px 30px">Type of role you’d like to apply: ${data.role}</li>` : ''}
-                      ${!!data.resume ? `<li style="margin: 0 0 10px 30px">CV: ${data.resumeInputType === 'file' ? 'upload as attachment' : `<a href="${data.resume}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
-                      >${data.resume}</a>`}</li>` : ''}
-                      ${!data.resume ? `<li style="margin: 0 0 10px 30px">CV: No attachment and might sent/will send directly to hr@ac-re.com.tw.</li>` : ''}
-                      ${!!data.coverLetter ? `<li style="margin: 0 0 10px 30px">Cover letter: ${data.coverLetterInputType === 'file' ? 'upload as attachment' : `<a href="${data.coverLetter}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
-                      >${data.coverLetter}</a>`}</li>` : ''}
-                      ${!data.coverLetter ? `<li style="margin: 0 0 10px 30px">Cover letter: No attachment and might sent/will send directly to hr@ac-re.com.tw.</li>` : ''}
+                      <li style="margin: 0 0 10px 30px">Phone*: ${
+                        data.mobile
+                      };</li>
+                      <li style="margin: 0 0 10px 30px">Email*: ${
+                        data.email
+                      }</li>
+                      ${
+                        !!data.role
+                          ? `<li style="margin: 0 0 10px 30px">Type of role you’d like to apply: ${data.role}</li>`
+                          : ""
+                      }
+                      ${
+                        !!data.resume
+                          ? `<li style="margin: 0 0 10px 30px">CV: ${
+                              data.resumeInputType === "file"
+                                ? "upload as attachment"
+                                : `<a href="${data.resume}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
+                      >${data.resume}</a>`
+                            }</li>`
+                          : ""
+                      }
+                      ${
+                        !data.resume
+                          ? `<li style="margin: 0 0 10px 30px">CV: No attachment and might sent/will send directly to hr@unity-risk.com.</li>`
+                          : ""
+                      }
+                      ${
+                        !!data.coverLetter
+                          ? `<li style="margin: 0 0 10px 30px">Cover letter: ${
+                              data.coverLetterInputType === "file"
+                                ? "upload as attachment"
+                                : `<a href="${data.coverLetter}" style="color: #0077cc; text-decoration: none; cursor: pointer;"
+                      >${data.coverLetter}</a>`
+                            }</li>`
+                          : ""
+                      }
+                      ${
+                        !data.coverLetter
+                          ? `<li style="margin: 0 0 10px 30px">Cover letter: No attachment and might sent/will send directly to hr@unity-risk.com.</li>`
+                          : ""
+                      }
                     </ul>
                   </td>
                 </tr>
@@ -487,9 +522,11 @@ const careerFormTemplate = (data) => {
                             text-align: left;
                           "
                         >
-                          You're receiving this message because ${data.name} sent from <a
+                          You're receiving this message because ${
+                            data.name
+                          } sent from <a
                           href="${frontendDomain}/career"
-                          >AC Re career form</a>.
+                          >Unity career form</a>.
                         </td>
                       </tr>
                       <!-- Subscription Info : BEGIN -->
@@ -533,7 +570,7 @@ const careerFormTemplate = (data) => {
                             text-align: left;
                           "
                         >
-                          <strong>AC Re</strong>.
+                          <strong>Unity</strong>.
                           <span class="unstyle-auto-detected-links"
                             >+886-2-2508-0488</span
                           >
@@ -554,8 +591,7 @@ const careerFormTemplate = (data) => {
     </center>
   </body>
 </html>
-                `
-    )
-}
+                `;
+};
 
-module.exports = careerFormTemplate
+module.exports = careerFormTemplate;
