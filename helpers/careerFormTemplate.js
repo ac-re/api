@@ -1,4 +1,5 @@
 "use strict";
+
 const { frontendDomain } = require("./config");
 
 const careerFormTemplate = (data) => {
