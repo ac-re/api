@@ -42,7 +42,10 @@ const contactForm = async (req, res) => {
       const contactMailOptions = {
         from: emailFrom,
         to: config.contactEmailto,
-        cc: data.email,
+        cc: {
+          name: data.name,
+          address: data.email,
+        },
       };
       const mailData = {
         ...contactMailOptions,
@@ -81,8 +84,11 @@ const careerForm = async (req, res, next) => {
       const mailOptions = {
         from: emailFrom,
         to: config.emailto,
-        cc: email.email,
-        subject: email.subject || `Employment application form: ${email.name}`,
+        cc: {
+          name: email.name,
+          address: email.email,
+        },
+        subject: email.subject || `Employment application: ${email.name}`,
         attachments: files,
         html: careerFormTemplate(email),
       };
