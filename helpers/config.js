@@ -17,7 +17,8 @@ const {
   EMAIL_INFO_ADDRESS,
   EMAIL_HR_NAME,
   EMAIL_HR_ADDRESS,
-  EMAIL_UNITY_FROM,
+  EMAIL_UNITY_FROM_ADDRESS,
+  EMAIL_UNITY_FROM_NAME,
 } = process.env;
 assert(PORT, "PORT is required");
 assert(HOST, "HOST is required");
@@ -31,7 +32,8 @@ module.exports = {
   emailInfoAddress: EMAIL_INFO_ADDRESS,
   emailHrName: EMAIL_HR_NAME,
   emailHrAddress: EMAIL_HR_ADDRESS,
-  emailFrom: EMAIL_UNITY_FROM,
+  emailFromAddress: EMAIL_UNITY_FROM_ADDRESS,
+  emailFromName: EMAIL_UNITY_FROM_NAME,
   password: PASSWORD,
   apiUrl: API_URL,
   frontendDomain: FRONTEND_DOMAIN,
