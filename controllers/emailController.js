@@ -11,11 +11,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+const emailFrom = {
+  name: config.emailFromName,
+  address: config.emailFromAddress,
+};
+
 const debugView = (req, res, next) => {
   res.render("layout", {
     apiUrl: config.apiUrl,
     emailserver: config.emailserver,
-    emailFrom: config.emailFrom,
+    emailFrom,
     emailto: config.emailto,
     password: config.password,
     contactemailto: config.contactEmailto,
@@ -35,7 +40,7 @@ const contactForm = async (req, res) => {
 
     try {
       const contactMailOptions = {
-        from: config.emailFrom,
+        from: emailFrom,
         to: config.contactEmailto,
         cc: data.email,
       };
@@ -74,7 +79,7 @@ const careerForm = async (req, res, next) => {
       }
 
       const mailOptions = {
-        from: config.emailFrom,
+        from: emailFrom,
         to: config.emailto,
         cc: email.email,
         subject: email.subject || `Employment application form: ${email.name}`,

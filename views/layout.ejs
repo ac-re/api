@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Node Email</title>
-</head>
-<body>
+  </head>
+  <body>
     <p>apiUrl: <%= apiUrl %></p>
     <p>emailserver: <%= emailserver %></p>
-    <p>emailFrom: <%= emailFrom %></p>
+    <p>emailFrom: <%= emailFromName %> <%= emailFromAddress %></p>
     <p>emailto: <%= emailto %></p>
     <p>password: <%= password %></p>
     <input type="file" id="file" />
-    <br/>
-    <br/>
+    <br />
+    <br />
     <button onclick="submit()">call career-form api</button>
-    <hr/>
+    <hr />
     <button onclick="contactSubmit()">call contact-form api</button>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
-        function submit () {
-            let formData = new FormData();
+      function submit() {
+        let formData = new FormData();
 
-            const values = {
-                title: '1',
-                name: '2',
-                mobile: '3',
-                email: '4',
-                role: '5',
-            }
-            const files = {
-                resume: null,
-                coverLetter: null,
-            }
+        const values = {
+          title: "1",
+          name: "2",
+          mobile: "3",
+          email: "4",
+          role: "5",
+        };
+        const files = {
+          resume: null,
+          coverLetter: null,
+        };
 
-            formData.append('data', JSON.stringify(values));
-            formData.append('files', document.getElementById('file').files[0]);
-            /*
+        formData.append("data", JSON.stringify(values));
+        formData.append("files", document.getElementById("file").files[0]);
+        /*
             fetch('http://localhost:8080/api/send-attachment', {
                 method: 'POST',
                 body: formData,
@@ -47,48 +47,48 @@
                 },
             });
             */
-           $.ajax({
-                url: '<%= apiUrl %>career-form',
-                // url: 'http://localhost:8080/career-form',
-                type: 'POST',
-                datatype: 'json',
-                processData: false,
-                contentType: false,
-                data: formData,
-                success: (response) => {
-                    console.log(response)
-                },
-                error: (error) => {
-                    console.log(error)
-                }
-           })
-        }
+        $.ajax({
+          url: "<%= apiUrl %>career-form",
+          // url: 'http://localhost:8080/career-form',
+          type: "POST",
+          datatype: "json",
+          processData: false,
+          contentType: false,
+          data: formData,
+          success: (response) => {
+            console.log(response);
+          },
+          error: (error) => {
+            console.log(error);
+          },
+        });
+      }
 
-        function contactSubmit () {
-            const data = {
-                company: '1',
-                name: '2',
-                mobile: '3',
-                email: '4',
-                subject: '5',
-                message: '6',
-            }
+      function contactSubmit() {
+        const data = {
+          company: "1",
+          name: "2",
+          mobile: "3",
+          email: "4",
+          subject: "5",
+          message: "6",
+        };
 
-            $.ajax({
-                url: '<%= apiUrl %>contact-form',
-                // url: 'http://localhost:8080/contact-form',
-                type: 'POST',
-                datatype: 'json',
-                contentType: 'application/json;charset=utf-8',
-                data: JSON.stringify(data),
-                success: (response) => {
-                    console.log(response)
-                },
-                error: (error) => {
-                    console.log(error)
-                }
-           })
-        }
+        $.ajax({
+          url: "<%= apiUrl %>contact-form",
+          // url: 'http://localhost:8080/contact-form',
+          type: "POST",
+          datatype: "json",
+          contentType: "application/json;charset=utf-8",
+          data: JSON.stringify(data),
+          success: (response) => {
+            console.log(response);
+          },
+          error: (error) => {
+            console.log(error);
+          },
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
